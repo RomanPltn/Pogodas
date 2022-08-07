@@ -1,0 +1,24 @@
+<html>
+  <head>
+    <style>
+     body {
+      color: pink;
+      text-align: center;
+      }
+
+    </style>
+  </head>
+  <body>
+    <h1>Hello</h1>
+
+    <p> Welcome to POGODAS</p>
+    <p>{{user.username}}</p>
+    <div>
+
+      <a href="{% url 'logint' %}">Авторизация</a>
+      <a href="{% url 'registr' %}">Регистрация</a>
+      <a href="{% url 'vhod' %}">Вход</a>
+
+    </div>
+  </body>
+</html>
