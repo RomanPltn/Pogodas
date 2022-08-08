@@ -1,32 +1,39 @@
 import requests
 from .models import City
 from .forms import CityForm
-from django.shortcuts import render,redirect
+from django.shortcuts import render, redirect
 from django.contrib.auth.models import User
-from django.contrib.auth import login, authenticate,logout
+from django.contrib.auth import login, authenticate, logout
+
 
 def home(request):
-    return render(request,"users/home.html")
+    return render(request, "users/home.html")
+
+
 def logint(request):
     if request.POST:
-        user = authenticate(username=request.POST['username'],password=request.POST['password'])
-        login(request,user)
+        user = authenticate(username=request.POST['username'], password=request.POST['password'])
+        login(request, user)
         return redirect("/")
     return render(request, "users/logints.html")
+
+
 def registr(request):
     if request.POST:
         new_user = User(username=request.POST['username'])
         new_user.set_password(request.POST['password'])
         new_user.save()
-        login(request,new_user)
+        login(request, new_user)
         return redirect("/home")
     return render(request, "users/registr.html")
+
+
 def exit(request):
     logout(request)
     return redirect("/home")
 
 
-def vhod(request):
+def entry():
     return redirect("/")
 
 
