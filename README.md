@@ -1,4 +1,4 @@
-# Pogodas
+# Weather
 
 This is a project that shows current weather in some different cities at the same time.
 
